@@ -5,11 +5,12 @@
 </template>
 
 <script>
-import ChildrensBooks from '../assets/ChildrensBooks.json'
 export default {
-    data(){return{
-        ChildrensBooks:[...ChildrensBooks]
-    }}
+    computed: {
+    ChildrensBooks(){
+      return this.$store.state.ChildrensBooks
+    }
+  }
 }
 </script>
 

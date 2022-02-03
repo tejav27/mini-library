@@ -20,22 +20,25 @@
 </template>
 
 <script>
-import ChildrensBooks from "../assets/ChildrensBooks.json";
 export default {
   methods: {
     backToBooks() {
       this.$router.push({ name: "BooksList" });
     },
     addToReadingList() {
+      this.$store.commit('updateReadingList', this.book.Title)
       this.$router.push({ name: "ReadingList" });
     },
   },
   computed: {
     book() {
-      return ChildrensBooks.find(
+      return this.ChildrensBooks.find(
         (book) => book.BookId == this.$route.params.id
       );
     },
+    ChildrensBooks(){
+      return this.$store.state.ChildrensBooks
+    }
   },
 };
 </script>
@@ -57,8 +60,5 @@ export default {
     place-items: end;
     border: rgb(88, 90, 84) 2px solid;
     background-color: rgb(23, 145, 98);
-}
-.description{
-
 }
 </style>

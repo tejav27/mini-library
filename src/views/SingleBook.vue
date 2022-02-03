@@ -61,4 +61,12 @@ export default {
     border: rgb(88, 90, 84) 2px solid;
     background-color: rgb(23, 145, 98);
 }
+button{
+    padding: 10px 15px;
+    font-weight: bolder;
+    margin: 5px;
+}
+.description{
+    margin: 15px;
+}
 </style>

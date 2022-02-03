@@ -16,7 +16,7 @@ export default new Vuex.Store({
         state.ReadingList.push(book)
       }
     },
-    removeBook(state,item){
+    removeFromList(state,item){
       let remove = state.ReadingList.find(listItem => (listItem == item))
       if(remove){
         state.ReadingList.splice(state.ReadingList.indexOf(remove),1)

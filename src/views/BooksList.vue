@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <router-link :to="'/singleBook/' + book.BookId" v-for="book in ChildrensBooks" :key="book.BookId">{{book.Title}}     |    </router-link>
+  <div class="list">
+      <router-link class="book-view" :to="'/singleBook/' + book.BookId" v-for="book in ChildrensBooks" :key="book.BookId">{{book.Title}}     |    </router-link>
   </div>
 </template>
 
@@ -15,5 +15,16 @@ export default {
 </script>
 
 <style>
-
+.book-view{
+    border: 3px solid teal;
+    background-color: rgb(248, 241, 228);
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(56, 51, 51);
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+}
 </style>

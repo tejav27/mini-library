@@ -10,6 +10,14 @@ export default new Vuex.Store({
     ChildrensBooks:[...ChildrensBooks],
     ReadingList:[]
   },
+  actions: {
+    removeBook(context, item){
+      context.commit('removeFromList', item)
+    },
+    addToReadingList(context, title){
+      context.commit('updateReadingList', title)
+    }
+  },
   mutations: {
     updateReadingList(state, book){
       if(!state.ReadingList.find(item => (item == book))){

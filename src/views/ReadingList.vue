@@ -19,7 +19,7 @@ export default {
   },
   methods:{
       removeBook(item){
-          this.$store.commit('removeFromList', item)
+          this.$store.dispatch('removeBook', item)
       }
   }
 };
